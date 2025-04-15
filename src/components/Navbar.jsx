@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-
+// import { useSelector } from "react-redux";
+import Button from '@mui/material/Button';          
 
 function Navbar() {
-  const { cart } = useSelector((store) => store.cart);
-  console.log(cart);
+
+  <Button variant="contained">Hello world</Button>    
   
   return (
     <div>

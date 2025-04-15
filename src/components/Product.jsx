@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, decrement, increment } from "../app/feature/CartSlice";
 import { useState } from "react";
+import Button from '@mui/material/Button';    
 
 function Product({ product }) {
   const dispatch = useDispatch();
@@ -58,13 +59,8 @@ function Product({ product }) {
             </div>
 
             {!isAdded ? (
-              <div className="mt-4 flex justify-center">
-                <button
-                  onClick={handleBuy}
-                  className="btn btn-active btn-success"
-                >
-                  Buy Now
-                </button>
+              <div className="mt-4 flex justify-center">  
+                  <Button onClick={handleBuy} variant="contained">Buy Now</Button>  
               </div>
             ) : (
               <div
@@ -81,7 +77,7 @@ function Product({ product }) {
                   </button>
                   <span className="text-lg font-semibold">
                     {isAdded.amount}
-                  </span>
+                  </span> 
                   <button
                     onClick={() => dispatch(increment(product.id))}
                     className="bg-green-500 text-white w-10 h-10 rounded-full text-lg hover:bg-green-600"
